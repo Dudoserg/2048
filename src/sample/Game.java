@@ -126,7 +126,6 @@ public class Game {
 
 
     public void left() {
-        
         for(int j = 0 ; j < this.size; j++){
             for(int i = 0 ; i < this.size ; i++){
                 this.motionElem(0,-1, i, j);
