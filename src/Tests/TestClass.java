@@ -37,5 +37,25 @@ public class TestClass {
         Assertions.assertTrue( num == 2 || num == 4);
     }
 
+    @Test
+    void generateNumberTestbig(){
+        Game game = new Game();
+        int iterations = 100000;
+        int count_2 = 0;
+        int count_4 = 0;
+        for(int i = 0 ; i < iterations; i++){
+            int num = game.generateNumber();
+            if( num == 2 )
+                count_2++;
+            if( num == 4 )
+                count_4++;
+        }
+        double percent_2 = count_2 / iterations;
+        double percent_4 = count_4 / iterations;
+        double epsilon = 0.1;
+        Assertions.assertTrue( (percent_2 > 0.9 - epsilon) &&  (percent_2 < 0.9 + epsilon)
+                &&  (percent_4 > 0.1 - epsilon) &&  (percent_2 < 0.4 + epsilon) );
+        
+    }
 
 }
