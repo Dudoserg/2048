@@ -258,4 +258,25 @@ public class TestClass {
 
     }
 
+    @Test
+    void upTest1(){
+        Game game = new Game();
+        game.init();
+        game.setElem(0,0,2);game.setElem(0,1,16);game.setElem(0,2,8);game.setElem(0,3,4);
+        game.setElem(1,0,2);game.setElem(1,1,2);game.setElem(1,2,4);game.setElem(1,3,2);
+        game.setElem(2,0,0);game.setElem(2,1,0);game.setElem(2,2,8);game.setElem(2,3,2);
+        game.setElem(3,0,0);game.setElem(3,1,0);game.setElem(3,2,0);game.setElem(3,3,0);
+
+        game.up();
+
+        int result[][] = {
+                {4,16,8,4},
+                {0,2,4,2},
+                {0,0,8,0},
+                {0,0,0,0},
+        };
+
+        Assertions.assertArrayEquals(result,game.getArr());
+    }
+
 }
