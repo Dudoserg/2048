@@ -158,6 +158,9 @@ public class Game {
         }
     }
 
+    /**
+     * Сдвиг матрицы вниз
+     */
     public void down() {
         for(int i = this.size ; i >= 0; i--){
             for(int j = 0 ; j < this.size  ; j++){
