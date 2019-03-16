@@ -36,4 +36,6 @@ public class TestClass {
         int num = game.generateNumber();
         Assertions.assertTrue( num == 2 || num == 4);
     }
+
+
 }
