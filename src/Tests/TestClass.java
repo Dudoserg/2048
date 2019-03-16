@@ -11,4 +11,9 @@ public class TestClass {
         Assertions.assertNotNull(game);
 
     }
+
+    @Test
+    void addTwoNumbersTest1(){
+        Assertions.assertEquals(game.add(4,4), 8);
+    }
 }
