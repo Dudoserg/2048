@@ -40,7 +40,7 @@ public class TestClass {
     @Test
     void generateNumberTestbig(){
         Game game = new Game();
-        int iterations = 100000;
+        int iterations = 1000000;
         int count_2 = 0;
         int count_4 = 0;
         for(int i = 0 ; i < iterations; i++){
@@ -78,6 +78,15 @@ public class TestClass {
         game.init();
         game.setElem(0,0,54);
         Assertions.assertEquals(game.getElem(0,0), 54);
+    }
+
+    @Test
+    void findFreePlaceInArray(){
+        Game game = new Game(4);
+        game.init();
+        game.setElem(0,0, 54);
+
+        Assertions.assertArrayEquals(game.findFreePlace(), new int[] {3,3});
     }
 
 }
