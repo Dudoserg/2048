@@ -142,6 +142,7 @@ public class Game {
      */
 
     public void left() {
+        this.clearArray_inactive();
         for(int j = 0 ; j < this.size; j++){
             for(int i = 0 ; i < this.size ; i++){
                 this.motionElem(0,-1, i, j);
@@ -153,6 +154,7 @@ public class Game {
      * Сдвиг матрицы вправо
      */
     public void right() {
+        this.clearArray_inactive();
         for(int j = this.size ; j >= 0; j--){
             for(int i = 0 ; i < this.size ; i++){
                 this.motionElem(0,1, i, j);
@@ -164,6 +166,7 @@ public class Game {
      * Сдвиг матрицы вверх
      */
     public void up() {
+        this.clearArray_inactive();
         for(int i = 0 ; i < this.size; i++){
             for(int j = 0 ; j < this.size ; j++){
                 this.motionElem(-1,0, i, j);
@@ -175,12 +178,15 @@ public class Game {
      * Сдвиг матрицы вниз
      */
     public void down() {
+        this.clearArray_inactive();
         for(int i = this.size ; i >= 0; i--){
             for(int j = 0 ; j < this.size  ; j++){
                 this.motionElem(1,0, i, j);
             }
         }
     }
+
+
 
 
 
@@ -229,7 +235,9 @@ public class Game {
         }
     }
 
-
+    /**
+     * Очищаем массив неактивных блоков
+     */
     public void clearArray_inactive() {
         for(int i = 0 ; i < size; i++)
             for(int j = 0 ; j < size; j++)
