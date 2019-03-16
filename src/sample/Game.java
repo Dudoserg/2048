@@ -126,6 +126,7 @@ public class Game {
 
 
     public void left() {
+        // todo реализовать нормальный сдвиг влево
         this.arr =  new int [][] {
                 {16,8,0,0},
                 {2,0,0,0},
@@ -133,4 +134,5 @@ public class Game {
                 {0,0,0,0},
         };
     }
+
 }
