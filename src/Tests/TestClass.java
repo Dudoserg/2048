@@ -50,12 +50,12 @@ public class TestClass {
             if( num == 4 )
                 count_4++;
         }
-        double percent_2 = count_2 / iterations;
-        double percent_4 = count_4 / iterations;
+        double percent_2 = ((double) count_2) / iterations;
+        double percent_4 = ((double)count_4) / iterations;
         double epsilon = 0.1;
         Assertions.assertTrue( (percent_2 > 0.9 - epsilon) &&  (percent_2 < 0.9 + epsilon)
-                &&  (percent_4 > 0.1 - epsilon) &&  (percent_2 < 0.4 + epsilon) );
-        
+                &&  (percent_4 > 0.1 - epsilon) &&  (percent_4 < 0.4 + epsilon) );
+
     }
 
 }

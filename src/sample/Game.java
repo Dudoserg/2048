@@ -19,7 +19,9 @@ public class Game {
      * @return число : 2 или 4 с вероятностью 90% и 10% соответственно
      */
     public int generateNumber() {
-        //todo доделать метон нормально, чтобы возвращал 2 или 4 с вероятностью 90% и 10% соответственно
+        double rand =  Math.random();
+        if(rand < 0.1)
+            return 4;
         return 2;
     }
 }
