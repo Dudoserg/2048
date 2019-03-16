@@ -64,11 +64,19 @@ public class TestClass {
         game.init();
         Assertions.assertNotNull(game.getArr());
     }
+
     @Test
     void setSizeTest(){
         Game game = new Game(4);
 
         Assertions.assertEquals(game.getSize(), 4);
+    }
+
+    @Test
+    void setElemInArrayTest(){
+        Game game = new Game(4);
+        game.setElem(0,0,54);
+        Assertions.assertEquals(game.getElem(0,0), 54);
     }
 
 }

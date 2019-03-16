@@ -35,6 +35,10 @@ public class Game {
         return this.arr;
     }
 
+    /**
+     * Метод для получения размера матрицы
+     * @return размер матрицы (int)
+     */
     public int getSize(){
         return this.size;
     }
