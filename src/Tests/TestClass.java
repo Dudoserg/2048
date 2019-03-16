@@ -33,7 +33,7 @@ public class TestClass {
     @Test
     void generateNumberTest(){
         Game game = new Game();
-        int num = game.generateNumber();
+        int num = game.generteNumber();
         Assertions.assertTrue( num == 2 || num == 4);
     }
 }

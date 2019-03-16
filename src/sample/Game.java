@@ -13,4 +13,8 @@ public class Game {
     public int add(int a, int b) {
        return a+b;
     }
+
+    public int generateNumber() {
+        return 2;
+    }
 }
