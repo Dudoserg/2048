@@ -76,4 +76,8 @@ public class Game {
     public int getElem(int i, int j) {
         return this.arr[i][j];
     }
+
+    public int[] findFreePlace() {
+        return new int[]{3,3};
+    }
 }
