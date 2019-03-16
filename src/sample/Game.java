@@ -13,6 +13,5 @@ public class Game {
         if(a == 4 && b == 4)
             return 8;
         return 16;
-
     }
 }
