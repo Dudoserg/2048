@@ -75,6 +75,7 @@ public class TestClass {
     @Test
     void setElemInArrayTest(){
         Game game = new Game(4);
+        game.init();
         game.setElem(0,0,54);
         Assertions.assertEquals(game.getElem(0,0), 54);
     }

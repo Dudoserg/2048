@@ -68,4 +68,12 @@ public class Game {
             return 4;
         return 2;
     }
+
+    public void setElem(int i, int j, int num) {
+        this.arr[i][j] = num;
+    }
+
+    public int getElem(int i, int j) {
+        return this.arr[i][j];
+    }
 }
