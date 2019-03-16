@@ -9,9 +9,6 @@ public class Game {
      * @return сумма двух чисел
      */
     public int add(int a, int b) {
-        //todo реализовать метод add позднее до конца
-        if(a == 4 && b == 4)
-            return 8;
-        return 16;
+       return a+b;
     }
 }
