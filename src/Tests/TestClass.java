@@ -118,4 +118,24 @@ public class TestClass {
         }
     }
 
+    @Test
+    void LeftTest1(){
+        Game game = new Game();
+        game.setElem(0,0,16);game.setElem(0,1,4);game.setElem(0,2,4);game.setElem(0,3,0);
+        game.setElem(1,0,2);game.setElem(1,1,0);game.setElem(1,2,0);game.setElem(1,3,0);
+        game.setElem(2,0,2);game.setElem(2,1,0);game.setElem(2,2,2);game.setElem(2,3,0);
+        game.setElem(3,0,0);game.setElem(3,1,0);game.setElem(3,2,0);game.setElem(3,3,0);
+
+        game.left();
+
+        int result[][] = {
+                {16,8,0,0},
+                {2,0,0,0},
+                {4,0,0,0},
+                {0,0,0,0},
+        };
+
+        Assertions.assertArrayEquals(result,game.getArr());
+    }
+
 }

@@ -48,6 +48,16 @@ public class Game {
         return this.size;
     }
 
+    public void setElem(int i, int j, int num) {
+
+        this.arr[i][j] = num;
+    }
+
+    public int getElem(int i, int j) {
+
+        return this.arr[i][j];
+    }
+
 
     public  void init() {
         this.arr = new int[size][size];
@@ -56,6 +66,8 @@ public class Game {
                 this.arr[i][j] = 0;
     }
 
+
+
     /**
      * Суммирование двух чисел
      * @param a Число кратное 2 (2,4,8,16...)
@@ -63,8 +75,11 @@ public class Game {
      * @return сумма двух чисел
      */
     public int add(int a, int b) {
+
        return a+b;
     }
+
+
 
     /**
      * Метод по генерации числа для вставки. 2 или 4 с вероятностью 90% и 10% соответственно
@@ -77,13 +92,8 @@ public class Game {
         return 2;
     }
 
-    public void setElem(int i, int j, int num) {
-        this.arr[i][j] = num;
-    }
 
-    public int getElem(int i, int j) {
-        return this.arr[i][j];
-    }
+
 
     /**
      * Получаем случайным образом индекс свободного места в массиве
@@ -102,6 +112,8 @@ public class Game {
         return new int[]{freePlace.get(rand).get(0), freePlace.get(rand).get(0)};
     }
 
+
+
     /**
      * Генерирование случайным образом числа в диапазоне [from,to)
      * @param from число которой обозначает начала диапазона, from < to
@@ -111,5 +123,7 @@ public class Game {
     public int rand(int from, int to){
         return from + (int) (Math.random() * to);
     }
+
+
 
 }
