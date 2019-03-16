@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import sample.Game;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class TestClass {
@@ -88,5 +89,6 @@ public class TestClass {
 
         Assertions.assertArrayEquals(game.findFreePlace(), new int[] {3,3});
     }
+
 
 }

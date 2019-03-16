@@ -1,5 +1,10 @@
 package sample;
 
+import javax.swing.text.MutableAttributeSet;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Game {
 
     /**
@@ -45,7 +50,10 @@ public class Game {
 
 
     public  void init() {
-        this.arr = new int[2][2];
+        this.arr = new int[size][size];
+        for(int i = 0 ; i < size; i++)
+            for(int j = 0 ; j < size; j++)
+                this.arr[i][j] = 0;
     }
 
     /**
@@ -78,6 +86,9 @@ public class Game {
     }
 
     public int[] findFreePlace() {
-        return new int[]{3,3};
+        ArrayList<ArrayList<Integer>> freePlace = new ArrayList<>();
+        return  new int[]{3,3};
     }
+
+
 }
