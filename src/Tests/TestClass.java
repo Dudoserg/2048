@@ -2,6 +2,7 @@ package Tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import sample.Game;
 
 public class TestClass {
     @Test
