@@ -81,13 +81,13 @@ public class TestClass {
         Assertions.assertEquals(game.getElem(0,0), 54);
     }
 
-    @Test
-    void findFreePlaceInArray(){
-        Game game = new Game(4);
-        game.init();
-        game.setElem(0,0, 54);
-        Assertions.assertArrayEquals(game.findFreePlace(), new int[] {3,3});
-    }
+//    @Test
+//    void findFreePlaceInArray(){
+//        Game game = new Game(4);
+//        game.init();
+//        game.setElem(0,0, 54);
+//        Assertions.assertArrayEquals(game.findFreePlace(), new int[] {3,3});
+//    }
 
     @Test
     void findFreePlaceInArray2(){

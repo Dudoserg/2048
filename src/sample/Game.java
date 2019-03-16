@@ -135,4 +135,14 @@ public class Game {
         };
     }
 
+    public void motionElem(int vectX, int vectY, int i, int j){
+        // todo реализовать нормальный сдвиг элемента по верктору (vectX,vectY)
+        this.arr =  new int [][] {
+                {16,8,0,0},
+                {2,0,0,0},
+                {2,0,2,0},
+                {0,0,0,0},
+        };
+    }
+
 }
