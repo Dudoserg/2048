@@ -8,5 +8,6 @@ public class TestClass {
     void gameClassCreationTest(){
         Game game = new Game();
         Assertions.assertNotNull(game);
+
     }
 }
