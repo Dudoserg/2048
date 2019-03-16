@@ -17,4 +17,9 @@ public class TestClass {
         Game game = new Game();
         Assertions.assertEquals(game.add(4,4), 8);
     }
+    @Test
+    void addTwoNumbersTest8x8(){
+        Game game = new Game();
+        Assertions.assertEquals(game.add(8,8), 16);
+    }
 }
