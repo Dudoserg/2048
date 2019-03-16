@@ -139,7 +139,7 @@ public class TestClass {
         Assertions.assertArrayEquals(result,game.getArr());
     }
 
-
+    @Test
     void rightTest1(){
         Game game = new Game();
         game.init();

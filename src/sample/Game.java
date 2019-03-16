@@ -132,6 +132,13 @@ public class Game {
             }
         }
     }
+    public void right() {
+        for(int j = this.size ; j >= 0; j--){
+            for(int i = 0 ; i < this.size ; i++){
+                this.motionElem(0,1, i, j);
+            }
+        }
+    }
 
     /**
      * Сдвигает элемент в одну из 4х сторон <br>
@@ -172,5 +179,6 @@ public class Game {
 
         }
     }
+
 
 }
