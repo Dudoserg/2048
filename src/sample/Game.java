@@ -85,6 +85,10 @@ public class Game {
         return this.arr[i][j];
     }
 
+    /**
+     * Получаем случайным образом индекс свободного места в массиве
+     * @return массив int. Первый элемент - строка, второй элемент столбец. Нумерация начинается с 0;
+     */
     public int[] findFreePlace() {
         ArrayList<ArrayList<Integer>> freePlace = new ArrayList<>();
         for(int i = 0 ; i < this.size; i++){
@@ -98,6 +102,12 @@ public class Game {
         return new int[]{freePlace.get(rand).get(0), freePlace.get(rand).get(0)};
     }
 
+    /**
+     * Генерирование случайным образом числа в диапазоне [from,to)
+     * @param from число которой обозначает начала диапазона, from < to
+     * @param to число которой обозначает конец диапазона, to > from
+     * @return целое число в диапазоне [from,to)
+     */
     public int rand(int from, int to){
         return from + (int) (Math.random() * to);
     }
