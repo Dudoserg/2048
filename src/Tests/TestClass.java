@@ -62,7 +62,13 @@ public class TestClass {
     void initArrayTest(){
         Game game = new Game();
         game.init();
-        Assertions.assertNotNull(game.arr);
+        Assertions.assertNotNull(game.getArr());
+    }
+    @Test
+    void setSizeTest(){
+        Game game = new Game(4);
+        
+        Assertions.assertEquals(game.getSize(), 4);
     }
 
 }

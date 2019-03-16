@@ -2,7 +2,21 @@ package sample;
 
 public class Game {
 
-    public int [][] arr;
+    private int [][] arr;
+
+    public int[][] getArr(){
+        return this.arr;
+    }
+
+    private int size;
+
+    public int getSize(){
+        return this.size;
+    }
+
+    public Game(int size){
+        this.size = size;
+    }
 
     public  void init() {
         this.arr = new int[2][2];
