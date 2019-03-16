@@ -148,11 +148,11 @@ public class TestClass {
         game.setElem(2,0,2);game.setElem(2,1,0);game.setElem(2,2,2);game.setElem(2,3,0);
         game.setElem(3,0,0);game.setElem(3,1,0);game.setElem(3,2,0);game.setElem(3,3,0);
 
-        game.motionElem(-1, 0, 0, 2);
+        game.motionElem(0, -1, 2, 2);
         int result[][] = {
-                {16,8,0,0},
+                {16,4,4,0},
                 {2,0,0,0},
-                {2,0,2,0},
+                {4,0,0,0},
                 {0,0,0,0},
         };
         Assertions.assertArrayEquals(result,game.getArr());

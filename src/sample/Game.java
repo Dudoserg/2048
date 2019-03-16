@@ -136,13 +136,32 @@ public class Game {
     }
 
     public void motionElem(int vectX, int vectY, int i, int j){
-        // todo реализовать нормальный сдвиг элемента по верктору (vectX,vectY)
-        this.arr =  new int [][] {
-                {16,8,0,0},
-                {2,0,0,0},
-                {2,0,2,0},
-                {0,0,0,0},
-        };
+        
+        try {
+            if(this.arr[i][j] == 0){        //Если сдвигаемый элемент равен нулю, то ничего не делаем
+                return;
+            }
+            // Если в стороне сдвига пустой элемент
+            if(this.arr[i + vectX][j + vectY] == 0){
+                this.arr[i + vectX][j + vectY] = this.arr[i][j]; // Присваиваем пустому элементу значение текущего
+                this.arr[i][j] = 0;                         // Текущий элемент теперь равен нулю
+                // Теперь опять двигаем элемент(теперь уже под новым индексом) Мб он еще сдвинется
+                this.motionElem(vectX, vectY, i + vectX, j + vectY);
+                return;
+            }
+            if(this.arr[i + vectX][j + vectY] == this.arr[i][j] ){ // Если равны, то сдвигаем
+                // Суммируем элементы, и присваиваем значение элементу в сторону которого идет сдвиг
+                this.arr[i + vectX][j + vectY] = this.add( this.arr[i + vectX][j + vectY],  this.arr[i][j ]);
+                // Текущий элемент теперь равен нулю
+                this.arr[i][j] = 0;
+            }
+            return;
+
+
+        }catch (ArrayIndexOutOfBoundsException ex){
+            System.out.println("anlaki" + ex);
+
+        }
     }
 
 }
