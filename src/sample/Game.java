@@ -14,6 +14,10 @@ public class Game {
 
     private int array_inactive[][];
 
+    public int[][] getArray_inactive() {
+        return array_inactive;
+    }
+
     /**
      * Размер матрицы поля
      */
