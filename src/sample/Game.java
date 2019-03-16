@@ -12,6 +12,8 @@ public class Game {
      */
     private int [][] arr;
 
+    private int array_inactive[][];
+
     /**
      * Размер матрицы поля
      */
@@ -64,6 +66,13 @@ public class Game {
         for(int i = 0 ; i < size; i++)
             for(int j = 0 ; j < size; j++)
                 this.arr[i][j] = 0;
+
+        this.array_inactive = new int[size][size];
+        for(int i = 0 ; i < size; i++)
+            for(int j = 0 ; j < size; j++)
+                this.array_inactive[i][j] = 0;
+
+
     }
 
 
@@ -169,6 +178,8 @@ public class Game {
         }
     }
 
+
+
     /**
      * Сдвигает элемент в одну из 4х сторон <br>
      *     [0,1] - вправо;<br>
@@ -194,11 +205,16 @@ public class Game {
                 this.motionElem(vectX, vectY, i + vectX, j + vectY);
                 return;
             }
-            if(this.arr[i + vectX][j + vectY] == this.arr[i][j] ){ // Если равны, то сдвигаем
+            // Если равны, и элемет в стороне сдвига активен, то сдвигаем
+            if(this.arr[i + vectX][j + vectY] == this.arr[i][j]  && this.array_inactive[i + vectX][j + vectY] == 0){
+
                 // Суммируем элементы, и присваиваем значение элементу в сторону которого идет сдвиг
                 this.arr[i + vectX][j + vectY] = this.add( this.arr[i + vectX][j + vectY],  this.arr[i][j ]);
                 // Текущий элемент теперь равен нулю
                 this.arr[i][j] = 0;
+
+                // Делаем элемент, к которому прибавили число неактивным. ДАЛЕЕ ОН НЕ МОЖЕТ ПРИНЯТЬ УЧАСТИЕ В СЛОЖЕНИИ С ДРУГИМИ ЧИСЛАМИ
+                this.array_inactive[i + vectX][j + vectY] = 1;
             }
             return;
 
