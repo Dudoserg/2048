@@ -2,7 +2,11 @@ package sample;
 
 public class Game {
 
+    public int [][] arr;
 
+    public  void init() {
+        this.arr = new int[2][2];
+    }
 
     /**
      * Суммирование двух чисел

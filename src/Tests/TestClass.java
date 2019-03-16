@@ -61,8 +61,8 @@ public class TestClass {
     @Test
     void initArrayTest(){
         Game game = new Game();
-        Game.init();
-        Assertions.assertNotNull(Game.arr);
+        game.init();
+        Assertions.assertNotNull(game.arr);
     }
 
 }
