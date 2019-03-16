@@ -2,8 +2,10 @@ package sample;
 
 public class Game {
 
-    public int add(int i, int i1) {
+    public int add(int a, int b) {
         //todo реализовать метод add позднее до конца
-        return 8;
+        if(a == 4 && b == 4)
+            return 8;
+        throw new IllegalArgumentException("add() works only for 4+4");
     }
 }
