@@ -87,7 +87,15 @@ public class Game {
 
     public int[] findFreePlace() {
         ArrayList<ArrayList<Integer>> freePlace = new ArrayList<>();
-        return  new int[]{3,3};
+        for(int i = 0 ; i < this.size; i++){
+            for(int j = 0 ; j < this.size; j++){
+                if(this.arr[i][j] == 0)
+                    freePlace.add( new ArrayList(Arrays.asList(i,j)));
+            }
+        }
+        int sizeFreePlace = freePlace.size();
+        int rand = this.rand(0, sizeFreePlace);
+        return new int[]{freePlace.get(rand).get(0), freePlace.get(rand).get(0)};
     }
 
     public int rand(int from, int to){

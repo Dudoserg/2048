@@ -86,8 +86,21 @@ public class TestClass {
         Game game = new Game(4);
         game.init();
         game.setElem(0,0, 54);
-
         Assertions.assertArrayEquals(game.findFreePlace(), new int[] {3,3});
+    }
+
+    @Test
+    void findFreePlaceInArray2(){
+        Game game = new Game(4);
+        game.init();
+        game.setElem(0,0, 54);
+        boolean flagTrue = false;
+        for(int i = 0 ; i < 10000; i++){
+            int result[] = game.findFreePlace();
+            if(result[0] == 3 && result[1] == 3)
+                flagTrue = true;
+        }
+        Assertions.assertTrue(flagTrue);
     }
 
     @Test
