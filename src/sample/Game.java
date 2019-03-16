@@ -124,6 +124,9 @@ public class Game {
         return from + (int) (Math.random() * to);
     }
 
+    /**
+     * Сдвиг матрицы влево
+     */
 
     public void left() {
         for(int j = 0 ; j < this.size; j++){
@@ -132,6 +135,10 @@ public class Game {
             }
         }
     }
+
+    /**
+     * Сдвиг матрицы вправо
+     */
     public void right() {
         for(int j = this.size ; j >= 0; j--){
             for(int i = 0 ; i < this.size ; i++){
