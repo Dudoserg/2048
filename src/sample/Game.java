@@ -135,8 +135,19 @@ public class Game {
         };
     }
 
+    /**
+     * Сдвигает элемент в одну из 4х сторон <br>
+     *     [0,1] - вправо;<br>
+     *     [1,0] - вниз;<br>
+     *     [0,-1] - влево;<br>
+     *     [-1,0] - вверх;<br>
+     * @param vectX направление стороны сдвига в массиве в столбце
+     * @param vectY направление стороны сдвига в массиве в строке
+     * @param i индекс i сдвигаемого элемента. 0 <= i <= arr.size
+     * @param j индекс j сдвигаемого элемента. 0 <= i <= arr.size
+     */
     public void motionElem(int vectX, int vectY, int i, int j){
-        
+
         try {
             if(this.arr[i][j] == 0){        //Если сдвигаемый элемент равен нулю, то ничего не делаем
                 return;
@@ -159,7 +170,7 @@ public class Game {
 
 
         }catch (ArrayIndexOutOfBoundsException ex){
-            System.out.println("anlaki" + ex);
+            return;
 
         }
     }
