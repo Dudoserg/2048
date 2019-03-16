@@ -125,5 +125,12 @@ public class Game {
     }
 
 
-
+    public void left() {
+        this.arr =  new int [][] {
+                {16,8,0,0},
+                {2,0,0,0},
+                {4,0,0,0},
+                {0,0,0,0},
+        };
+    }
 }
