@@ -90,5 +90,8 @@ public class Game {
         return  new int[]{3,3};
     }
 
+    public int rand(int from, int to){
+        return from + (int) (Math.random() * to);
+    }
 
 }
