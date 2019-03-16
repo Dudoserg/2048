@@ -2,24 +2,43 @@ package sample;
 
 public class Game {
 
+    /**
+     * матрица поля
+     */
     private int [][] arr;
 
+    /**
+     * Размер матрицы поля
+     */
+    private int size;
+
+    /**
+     * Конструктор для создания класса Game.
+     * @param size параметр, который задает размер матрицы поля.
+     */
+    public Game(int size){
+        this.size = size;
+    }
+
+    /**
+     * Конструктор для создания класса Game. Без параметров
+     */
+    public Game(){
+        this.size = 4;
+    }
+
+    /**
+     * Метод для получения матрицы поля
+     * @return массив типа int, размером size*size
+     */
     public int[][] getArr(){
         return this.arr;
     }
-
-    private int size;
 
     public int getSize(){
         return this.size;
     }
 
-    public Game(int size){
-        this.size = size;
-    }
-    public Game(){
-        this.size = 4;
-    }
 
     public  void init() {
         this.arr = new int[2][2];
