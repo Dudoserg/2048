@@ -90,5 +90,19 @@ public class TestClass {
         Assertions.assertArrayEquals(game.findFreePlace(), new int[] {3,3});
     }
 
+    @Test
+    void randTest(){
+        Game game = new Game(4);
+        game.init();
+        int result[] = new int[10];
+        int countIteration = 1000000;
+        for(int i = 0 ; i < countIteration; i++){
+            result[game.rand(0,10)]++;
+        }
+        for(int i = 0 ; i < 10; i++){
+            Assertions.assertTrue((result[i] > (countIteration/10) - ((double)countIteration / 100))
+                    && (result[i] < (countIteration/10) + ((double)countIteration / 100)));
+        }
+    }
 
 }
