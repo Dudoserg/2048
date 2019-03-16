@@ -158,7 +158,6 @@ public class TestClass {
         Assertions.assertArrayEquals(result,game.getArr());
 
     }
-
     @Test
     void motionElemTest2(){
         Game game = new Game();

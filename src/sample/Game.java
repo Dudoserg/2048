@@ -126,13 +126,12 @@ public class Game {
 
 
     public void left() {
-        // todo реализовать нормальный сдвиг влево
-        this.arr =  new int [][] {
-                {16,8,0,0},
-                {2,0,0,0},
-                {4,0,0,0},
-                {0,0,0,0},
-        };
+        
+        for(int j = 0 ; j < this.size; j++){
+            for(int i = 0 ; i < this.size ; i++){
+                this.motionElem(0,-1, i, j);
+            }
+        }
     }
 
     /**
