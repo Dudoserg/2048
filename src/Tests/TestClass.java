@@ -67,7 +67,7 @@ public class TestClass {
     @Test
     void setSizeTest(){
         Game game = new Game(4);
-        
+
         Assertions.assertEquals(game.getSize(), 4);
     }
 

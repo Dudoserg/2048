@@ -17,6 +17,9 @@ public class Game {
     public Game(int size){
         this.size = size;
     }
+    public Game(){
+        this.size = 4;
+    }
 
     public  void init() {
         this.arr = new int[2][2];
