@@ -22,4 +22,9 @@ public class TestClass {
         Game game = new Game();
         Assertions.assertEquals(game.add(8,8), 16);
     }
+    @Test
+    void addTwoNumbersTest16x16(){
+        Game game = new Game();
+        Assertions.assertEquals(game.add(16,16), 32);
+    }
 }
