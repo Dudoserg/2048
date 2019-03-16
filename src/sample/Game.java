@@ -2,6 +2,8 @@ package sample;
 
 public class Game {
 
+
+
     /**
      * Суммирование двух чисел
      * @param a Число кратное 2 (2,4,8,16...)
