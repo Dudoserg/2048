@@ -4,6 +4,7 @@ import javax.swing.text.MutableAttributeSet;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 public class Game {
 
@@ -116,13 +117,18 @@ public class Game {
         ArrayList<ArrayList<Integer>> freePlace = new ArrayList<>();
         for(int i = 0 ; i < this.size; i++){
             for(int j = 0 ; j < this.size; j++){
-                if(this.arr[i][j] == 0)
-                    freePlace.add( new ArrayList(Arrays.asList(i,j)));
+                if(this.arr[i][j] == 0){
+                    ArrayList<Integer> tmp = new ArrayList<>();
+                    tmp.add(i);
+                    tmp.add(j);
+                    freePlace.add( tmp);
+                }
             }
         }
         int sizeFreePlace = freePlace.size();
-        int rand = this.rand(0, sizeFreePlace);
-        return new int[]{freePlace.get(rand).get(0), freePlace.get(rand).get(0)};
+        //int rand = this.rand(0, sizeFreePlace);
+        int rand = new Random().nextInt(freePlace.size());
+        return new int[]{freePlace.get(rand).get(0), freePlace.get(rand).get(1)};
     }
 
 
@@ -141,49 +147,61 @@ public class Game {
      * Сдвиг матрицы влево
      */
 
-    public void left() {
+    public boolean left() {
         this.clearArray_inactive();
+        boolean flagMotion = false;
         for(int j = 0 ; j < this.size; j++){
             for(int i = 0 ; i < this.size ; i++){
-                this.motionElem(0,-1, i, j);
+                if( this.motionElem(0,-1, i, j))
+                    flagMotion = true;
             }
         }
+        return flagMotion;
     }
 
     /**
      * Сдвиг матрицы вправо
      */
-    public void right() {
+    public boolean right() {
         this.clearArray_inactive();
+        boolean flagMotion = false;
         for(int j = this.size ; j >= 0; j--){
             for(int i = 0 ; i < this.size ; i++){
-                this.motionElem(0,1, i, j);
+                if( this.motionElem(0,1, i, j) )
+                    flagMotion = true;
             }
         }
+        return flagMotion;
     }
 
     /**
      * Сдвиг матрицы вверх
      */
-    public void up() {
+    public boolean up() {
         this.clearArray_inactive();
+        boolean flagMotion = false;
         for(int i = 0 ; i < this.size; i++){
             for(int j = 0 ; j < this.size ; j++){
-                this.motionElem(-1,0, i, j);
+                if(  this.motionElem(-1,0, i, j))
+                    flagMotion = true;
             }
         }
+        return flagMotion;
     }
 
     /**
      * Сдвиг матрицы вниз
      */
-    public void down() {
+    public boolean down() {
         this.clearArray_inactive();
+        boolean flagMotion = false;
         for(int i = this.size ; i >= 0; i--){
             for(int j = 0 ; j < this.size  ; j++){
-                this.motionElem(1,0, i, j);
+                if( this.motionElem(1,0, i, j) )
+                    flagMotion = true;
             }
         }
+        return flagMotion;
     }
 
 
@@ -201,11 +219,11 @@ public class Game {
      * @param i индекс i сдвигаемого элемента. 0 <= i <= arr.size
      * @param j индекс j сдвигаемого элемента. 0 <= i <= arr.size
      */
-    public void motionElem(int vectX, int vectY, int i, int j){
+    public boolean motionElem(int vectX, int vectY, int i, int j){
 
         try {
             if(this.arr[i][j] == 0){        //Если сдвигаемый элемент равен нулю, то ничего не делаем
-                return;
+                return false;
             }
             // Если в стороне сдвига пустой элемент
             if(this.arr[i + vectX][j + vectY] == 0){
@@ -213,7 +231,7 @@ public class Game {
                 this.arr[i][j] = 0;                         // Текущий элемент теперь равен нулю
                 // Теперь опять двигаем элемент(теперь уже под новым индексом) Мб он еще сдвинется
                 this.motionElem(vectX, vectY, i + vectX, j + vectY);
-                return;
+                return true;
             }
             // Если равны, и элемет в стороне сдвига активен, то сдвигаем
             if(this.arr[i + vectX][j + vectY] == this.arr[i][j]  && this.array_inactive[i + vectX][j + vectY] == 0){
@@ -225,12 +243,13 @@ public class Game {
 
                 // Делаем элемент, к которому прибавили число неактивным. ДАЛЕЕ ОН НЕ МОЖЕТ ПРИНЯТЬ УЧАСТИЕ В СЛОЖЕНИИ С ДРУГИМИ ЧИСЛАМИ
                 this.array_inactive[i + vectX][j + vectY] = 1;
+                return true;
             }
-            return;
+            return false;
 
 
         }catch (ArrayIndexOutOfBoundsException ex){
-            return;
+            return false;
 
         }
     }
